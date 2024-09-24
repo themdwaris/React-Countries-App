@@ -8,25 +8,3 @@
   box-sizing: border-box;
 }
 
-body{
-  --bgColor:#fefbfb;
-  --headerBg:#fafafa;
-  --btnBg:#e3e3e3;
-  --textColor:#1e1e1e;
-  background-color: var(--bgColor);
-  color: var(--textColor);
-}
-
-.bg{
-  background-color: var(--bgColor);
-}
-.textColor{
-  color: var(--textColor);
-}
-.headerBg{
-  background-color: var(--headerBg);
-  border-bottom: .5px solid rgb(229, 229, 229);
-}
-.btnBg{
-  background-color: var(--btnBg);
-}
