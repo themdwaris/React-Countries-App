@@ -8,7 +8,7 @@ const Filter = ({ filter, setFilter, filterByRegion, setFilterByRegion,regions }
   
   return (
     <div className="w-full flex items-center justify-between mb-6">
-      <div className={`w-full max-w-[320px] my-10 flex items-center rounded-sm py-3 px-3 ${isDark?"bg-gray-700":"bg-gray-50 border"}`}>
+      <div className={`w-full max-w-[320px] my-10 flex items-center rounded-full py-3 px-3 ${isDark?"bg-gray-700":"bg-gray-50 border"}`}>
         <span className="text-xl text-gray-400 leading-3">
           <ion-icon name="search-outline"></ion-icon>
         </span>
@@ -25,7 +25,7 @@ const Filter = ({ filter, setFilter, filterByRegion, setFilterByRegion,regions }
       </div>
       <select
         value={filterByRegion}
-        className={`outline-none px-4 py-[10px] rounded-sm leading-3 text-[16px] cursor-pointer ml-4 md:ml-0 ${isDark?"bg-gray-700 text-gray-300":"bg-gray-50 text-gray-700 border"}`}
+        className={`outline-none py-[11px] rounded-full text-[16px] cursor-pointer ml-4 md:ml-0 px-4 ${isDark?"bg-gray-700 text-gray-300":"bg-gray-50 text-gray-700 border"}`}
         onChange={(e)=>{
           setFilterByRegion(e.target.value)
           setFilter("")

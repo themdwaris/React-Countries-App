@@ -20,7 +20,7 @@ const Header = ({theme}) => {
     >
       <div className="max-w-6xl flex items-center justify-between mx-auto">
         <h1 className="font-semibold text-[21px] md:text-2xl">
-          <Link to="/">Where in the World</Link>
+          <Link to="/" className="flex items-center gap-1"><span>Where in the</span><ion-icon name="earth-outline"></ion-icon></Link>
         </h1>
         <div
           className="text-xl flex items-center cursor-pointer"
