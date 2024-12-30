@@ -8,20 +8,32 @@ const Home = () => {
   const [filter, setFilter] = useState("");
   const [filterByRegion, setFilterByRegion] = useState("");
 
-  const getCountryData = async () => {
-    try {
-      const res = await fetch("https://restcountries.com/v3.1/all");
-      const result = await res?.json();
-      setData(result);
-    } catch (error) {
-      console.log(error);
-    }
+  // const getCountryData = async () => {
+  //   try {
+  //     const res = await fetch("https://restcountries.com/v3.1/all");
+  //     const result = await res?.json();
+  //     setData(result);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const fetchApi = () => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      }).catch((error)=>{
+        console.log(error);
+        
+      })
   };
-
   useEffect(() => {
-    getCountryData();
+    // getCountryData();
+    fetchApi();
   }, []);
-
+//  console.log(data);
+ 
   const regions = data?.map((country) => country?.region);
 
   const uniqueRegion = regions.filter(
@@ -33,7 +45,8 @@ const Home = () => {
   // );
   // console.log(filterCountries);
   // console.log("".includes(""));
- 
+  // console.log(data);
+
   return (
     <div className="w-full max-w-6xl mx-auto py-8 px-6 xl:px-0">
       <Filter
@@ -55,13 +68,12 @@ const Home = () => {
             ?.filter((country) =>
               filterByRegion
                 ? country?.region.toLowerCase().includes(filterByRegion)
-                : country?.name?.common.toLowerCase().includes(filter)||country?.region?.toLowerCase().includes(filter)
+                : country?.name?.common.toLowerCase().includes(filter) ||
+                  country?.region?.toLowerCase().includes(filter)
             )
             .map((country, index) => (
               <Card key={index} country={country} />
             ))}
-
-          
         </div>
       )}
     </div>

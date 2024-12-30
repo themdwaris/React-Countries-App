@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeProvider } from "../context/themeContext";
+
 import { useOutletContext } from "react-router-dom";
 
 const Filter = ({ filter, setFilter, filterByRegion, setFilterByRegion,regions }) => {
